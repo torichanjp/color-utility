@@ -58,3 +58,6 @@ $ yarn build
 $ serve build
 ```
 
+## Output
+
+![color-palette](https://github.com/torichanjp/color-utility/assets/2854426/615f66d1-39f7-4e59-9b9f-1a3b1d41d5e8)
