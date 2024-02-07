@@ -53,7 +53,7 @@ export class Color {
         const chr = max - min;
         let hue = 0;
         const val = Math.round(max / 255 * 100);
-        let sat = 0;
+        let sat: number;
 
         if (max === min || max === 0) {
             hue = 0
