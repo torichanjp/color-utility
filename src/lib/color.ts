@@ -1,3 +1,4 @@
+import { sprintf } from 'sprintf-js'
 /**
  *
  */
@@ -110,11 +111,15 @@ export class Color {
     }
 
     public toString() {
+        const rgb = sprintf('r:  %3d, g:  %3d, b:  %3d', this.rgb.r, this.rgb.g, this.rgb.b)
+        const nrgb = sprintf('nr: %3d, ng: %3d, nb: %3d', this.rgb.nr, this.rgb.ng, this.rgb.nb)
+        const hsv = sprintf('h:  %3d, s:  %3d, v:  %3d', this.hsv.h, this.hsv.s, this.hsv.v)
+
         return `
 hex:    ${this.hex}
-rgb:    r: ${this.rgb.r}, g: ${this.rgb.g}, b: ${this.rgb.b},
-        nr: ${this.rgb.nr}, ng: ${this.rgb.ng}, nb: ${this.rgb.nb}
-hsv:    h: ${this.hsv.h}, s: ${this.hsv.s}, v: ${this.hsv.v}
+rgb:    ${rgb}
+        ${nrgb}
+hsv:    ${hsv}
 chroma: ${this.chroma}
 luma:   ${this.luma}
         `
