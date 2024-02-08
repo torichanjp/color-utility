@@ -126,7 +126,7 @@ luma:   ${this.luma}
     }
 }
 
-export class ColorLib extends Array<Color> {
+export class ColorArray extends Array<Color> {
     public sortByHue() {
         return Color.sortByHue(this)
     }

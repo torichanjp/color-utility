@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 import {Colors} from "./components/Color"
-import {ColorLib, Color} from "./lib/color";
+import {ColorArray, Color} from "./lib/color";
 
 function App() {
     const colors = [
@@ -245,7 +245,7 @@ function App() {
         "#d4cfc0",
     ]
     const colorElements = colors.map(color => new Color(color))
-    const sortedColors = new ColorLib(...colorElements)
+    const sortedColors = new ColorArray(...colorElements)
         .sortDefault()
         .reverse()
     console.debug(sortedColors.toString())
