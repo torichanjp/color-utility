@@ -21,7 +21,7 @@ luma:   59
 ```
 ### Optimized color sorting.
 ```typescript
-import {ColorLib, Color} from "./lib/color";
+import {ColorArray, Color} from "./lib/color";
 
 const colors = [
     "#c5b9a1",
@@ -29,7 +29,7 @@ const colors = [
     "#cfc2ab",
 ]
 const colorElements = colors.map(color => new Color(color))
-const sortedColors = new ColorLib(...colorElements)
+const sortedColors = new ColorArray(...colorElements)
     .sortDefault()
     .reverse()
 // Do something
@@ -40,10 +40,14 @@ sortedColors.toString()
 * sortByHue()
 * sortByLuma()
 
-### A sample of a sorted color palette.
+## A sample of a sorted color palette.
 ```shell
 $ yarn run start
 ```
+
+### Output
+
+![color-palette](https://github.com/torichanjp/color-utility/assets/2854426/615f66d1-39f7-4e59-9b9f-1a3b1d41d5e8)
 
 ## Development
 ```shell
@@ -57,7 +61,3 @@ $ yarn build
 # If you have serve command, you can launch it on localhost.
 $ serve build
 ```
-
-## Output
-
-![color-palette](https://github.com/torichanjp/color-utility/assets/2854426/615f66d1-39f7-4e59-9b9f-1a3b1d41d5e8)
