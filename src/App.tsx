@@ -1,10 +1,12 @@
-import React from 'react';
+import React, {useState} from 'react';
 import './App.css';
-import {Colors} from "./components/Color"
-import {ColorArray, Color} from "./lib/color";
+import {Colors, ColorsWithParams} from "./components/Color"
+import { ColorArray, Color } from "./lib/color";
+import { ControlPanel } from "./components/ControlPanel";
+import { ParamsContext } from "./contexts/ParamsContext"
 
 function App() {
-    const colors = [
+    const colorObjs = [
         "#c5b9a1",
         "#ffffff",
         "#cfc2ab",
@@ -244,17 +246,17 @@ function App() {
         "#ffc5f0",
         "#d4cfc0",
     ]
-    const colorElements = colors.map(color => new Color(color))
-    const sortedColors = new ColorArray(...colorElements)
-        .sortDefault()
-        .reverse()
-    console.debug(sortedColors.toString())
+    const colorElements = colorObjs.map(color => new Color(color))
+    const colorArrays = new ColorArray(...colorElements)
 
-  return (
-    <div className="App">
-      <Colors colors={sortedColors}/>
-    </div>
-  );
+    return (
+        <div className="App">
+            <ParamsContext>
+                <ControlPanel/>
+                <ColorsWithParams colors={colorArrays}/>
+            </ParamsContext>
+        </div>
+    );
 }
 
 export default App;

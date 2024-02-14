@@ -1,12 +1,21 @@
+import classes from "./Color.module.sass"
+import {Color as ColorElement, ColorArray} from "../../lib/color";
 import React from "react";
-import "./Color.css"
-import {Color as ColorLib} from "../../lib/color";
+import {useParams} from "../../contexts/ParamsContext";
 
-export const Color: React.FC<{color: ColorLib, text?: string}> = (props) => {
+export const Color: React.FC<{color: ColorElement, text?: string}> = (props) => {
     const {color, text} = props
     const backgroundColor = '#' + color.hex
     const textColor = color.luma > 50 ? 'black' : 'white'
-    const textJsx = (text ? [text] : ['#' + color.hex, `Hue: ${color.hsv.h}`, `Sat: ${color.hsv.s}`, `Val: ${color.hsv.v}`])
+    const textJsx = (text
+        ? [text]
+        : [
+            '#' + color.hex,
+            `Hue: ${color.hsv.h}`,
+            `Sat: ${color.hsv.s}`,
+            `Val: ${color.hsv.v}`,
+            `Luma: ${color.luma}`
+        ])
         .map((_text, i) => {
             return (
                 <p key={i} style={{color: textColor}}>{_text}</p>
@@ -14,22 +23,33 @@ export const Color: React.FC<{color: ColorLib, text?: string}> = (props) => {
     })
 
     return (
-        <div className="colorItem" style={{backgroundColor: backgroundColor}}>
+        <div className={classes.color__item} style={{backgroundColor: backgroundColor}}>
             {textJsx}
         </div>
     )
 }
 
-export const Colors: React.FC<{colors: ColorLib[]}> = (props) => {
+export const Colors: React.FC<{colors: ColorElement[]}> = (props) => {
     const {colors} = props
-    const colorsTsx = colors.map((color, i) => {
+    const colorsTsx = colors.map((color) => {
         return (
-            <Color key={i} color={color}/>
+            <Color key={color.hex} color={color}/>
         )
     })
     return (
-        <div className="color-container">
+        <div className={classes.color__container}>
             {colorsTsx}
         </div>
+    )
+}
+
+export const ColorsWithParams: React.FC<{colors: ColorArray}> = (props) => {
+    const { colors } = props
+    const { useLuma, hueDivisions} = useParams()
+
+    return (
+        <>
+            <Colors colors={colors.sortDefault(hueDivisions, useLuma).reverse()}/>
+        </>
     )
 }

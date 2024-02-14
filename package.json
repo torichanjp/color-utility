@@ -42,6 +42,7 @@
     ]
   },
   "devDependencies": {
-    "@types/sprintf-js": "^1.1.4"
+    "@types/sprintf-js": "^1.1.4",
+    "sass": "^1.70.0"
   }
 }
