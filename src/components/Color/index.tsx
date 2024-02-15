@@ -6,7 +6,7 @@ import {useParams} from "../../contexts/ParamsContext";
 export const Color: React.FC<{color: ColorElement, text?: string}> = (props) => {
     const {color, text} = props
     const backgroundColor = '#' + color.hex
-    const textColor = color.luma > 50 ? 'black' : 'white'
+    const textColor = color.luma >= 55 ? 'black' : 'white'
     const textJsx = (text
         ? [text]
         : [
@@ -18,12 +18,15 @@ export const Color: React.FC<{color: ColorElement, text?: string}> = (props) => 
         ])
         .map((_text, i) => {
             return (
-                <p key={i} style={{color: textColor}}>{_text}</p>
+                <p key={i}>{_text}</p>
             )
     })
 
     return (
-        <div className={classes.color__item} style={{backgroundColor: backgroundColor}}>
+        <div
+            aria-label={color.hex}
+            className={classes.color__item}
+            style={{backgroundColor: backgroundColor, color: textColor}}>
             {textJsx}
         </div>
     )

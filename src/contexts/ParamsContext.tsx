@@ -1,4 +1,4 @@
-import React, {useContext, useState} from "react";
+import React, {useContext, useState, useMemo} from "react";
 
 export type ParamsType = {
     hueDivisions: number,
@@ -25,12 +25,14 @@ export const ParamsContext: React.FC<{children: React.ReactNode}> = ({children})
     const [hueDivisions, setHueDivisions] = useState(10)
     const [useLuma, setUseLuma] = useState(true)
 
-    const values = {
-        hueDivisions,
-        useLuma,
-        setHueDivisions,
-        setUseLuma,
-    }
+    const values = useMemo((): ParamsType => {
+        return {
+            hueDivisions,
+            useLuma,
+            setHueDivisions,
+            setUseLuma,
+        }
+    }, [hueDivisions, useLuma])
 
     return (
         <Params.Provider value={values}>
