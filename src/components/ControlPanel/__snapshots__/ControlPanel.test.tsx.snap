@@ -1,0 +1,39 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Snap shot for ControlPanel 1`] = `
+<div>
+  <div
+    class="wrapper"
+  >
+    <button>
+      -10
+    </button>
+    <button>
+      -1
+    </button>
+    <input
+      aria-label="num-of-hue-divisions"
+      type="text"
+      value="10"
+    />
+    <button>
+      +1
+    </button>
+    <button>
+      +10
+    </button>
+    <div>
+      <input
+        checked=""
+        id="use-luma"
+        type="checkbox"
+      />
+      <label
+        for="use-luma"
+      >
+        Use luma
+      </label>
+    </div>
+  </div>
+</div>
+`;

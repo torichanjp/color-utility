@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Snap shot for Color 1`] = `
+<div>
+  <div
+    aria-label="FFFFFF"
+    class="color__item"
+    style="background-color: rgb(255, 255, 255); color: black;"
+  >
+    <p>
+      #FFFFFF
+    </p>
+    <p>
+      Hue: 0
+    </p>
+    <p>
+      Sat: 0
+    </p>
+    <p>
+      Val: 100
+    </p>
+    <p>
+      Luma: 100
+    </p>
+  </div>
+</div>
+`;
