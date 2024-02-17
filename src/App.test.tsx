@@ -8,8 +8,8 @@ const nColor = colorObjs.length
 
 test('renders some elements', () => {
   render(<App />);
-  const useLumaText = screen.getByText(/Use luma/i);
-  expect(useLumaText).toBeInTheDocument()
+  const buttons = screen.queryAllByRole("button");
+  expect(buttons).toHaveLength(4)
 
   // all colors
   const divs = screen.queryAllByText(/#[a-f0-9]{6}/i)

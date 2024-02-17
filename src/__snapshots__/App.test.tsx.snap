@@ -5,6 +5,18 @@ exports[`Snap shot for App 1`] = `
   <div
     class="wrapper"
   >
+    <div
+      class="firstSortKey"
+    >
+      <p>
+        First sort key: HSV Hue
+      </p>
+      <p
+        class="description"
+      >
+        How many divisions of HSV Hue?
+      </p>
+    </div>
     <button>
       -10
     </button>
@@ -22,16 +34,32 @@ exports[`Snap shot for App 1`] = `
     <button>
       +10
     </button>
-    <div>
+    <div
+      class="secondSortKey"
+    >
+      <p>
+        Second sort key
+      </p>
       <input
         checked=""
-        id="use-luma"
-        type="checkbox"
+        id="luma"
+        type="radio"
+        value="luma"
       />
       <label
-        for="use-luma"
+        for="luma"
       >
-        Use luma
+        Luma
+      </label>
+      <input
+        id="hsv"
+        type="radio"
+        value="hsv"
+      />
+      <label
+        for="hsv"
+      >
+        HSV Value
       </label>
     </div>
   </div>

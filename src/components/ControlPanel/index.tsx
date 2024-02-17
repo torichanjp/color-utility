@@ -35,19 +35,25 @@ export const ControlPanel: React.FC = () => {
         setHueDivisions(_v)
         setInputValue(_v.toString())
     }
-    const checkboxChanged = (e: React.ChangeEvent<HTMLInputElement>) => {
-        setUseLuma(e.target.checked)
+    const radioChanged = (e: React.ChangeEvent<HTMLInputElement>) => {
+        setUseLuma(e.target.value === "luma")
     };
     return (
         <div className={classes.wrapper}>
+            <div className={classes.firstSortKey}>
+                <p>First sort key: HSV Hue</p>
+                <p className={classes.description}>How many divisions of HSV Hue?</p></div>
             <button onClick={minus10ButtonClick}>-10</button>
             <button onClick={minus1ButtonClick}>-1</button>
             <input type="text" aria-label="num-of-hue-divisions" value={inputValue} onChange={valueChanged}/>
             <button onClick={plus1ButtonClick}>+1</button>
             <button onClick={plus10ButtonClick}>+10</button>
-            <div>
-                <input id="use-luma" type={"checkbox"} checked={useLuma} onChange={checkboxChanged}/>
-                <label htmlFor={"use-luma"}>Use luma</label>
+            <div className={classes.secondSortKey}>
+                <p>Second sort key</p>
+                <input id="luma" type="radio" value="luma" checked={useLuma} onChange={radioChanged}/>
+                <label htmlFor={"luma"}>Luma</label>
+                <input id="hsv" type="radio" value="hsv" checked={!useLuma} onChange={radioChanged}/>
+                <label htmlFor={"hsv"}>HSV Value</label>
             </div>
 
         </div>
