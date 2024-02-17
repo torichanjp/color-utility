@@ -47,7 +47,7 @@ $ yarn run start
 
 ### Output
 
-[https://torichanjp.github.io/color-utility/](https://torichanjp.github.io/color-utility/)
+[https://color-utility.torichan.jp/](https://color-utility.torichan.jp/)
 
 ![image](https://github.com/torichanjp/color-utility/assets/2854426/a079b580-2cc0-474f-961f-68c7c928f241)
 
