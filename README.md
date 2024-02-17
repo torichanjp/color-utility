@@ -47,7 +47,9 @@ $ yarn run start
 
 ### Output
 
-![color-palette](https://github.com/torichanjp/color-utility/assets/2854426/615f66d1-39f7-4e59-9b9f-1a3b1d41d5e8)
+[https://torichanjp.github.io/color-utility/](https://torichanjp.github.io/color-utility/)
+
+![image](https://github.com/torichanjp/color-utility/assets/2854426/a079b580-2cc0-474f-961f-68c7c928f241)
 
 ## Development
 ```shell
