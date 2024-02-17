@@ -1,7 +1,8 @@
 {
   "name": "color",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
+  "homepage": "https://torichanjp.github.io/color-utility",
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
